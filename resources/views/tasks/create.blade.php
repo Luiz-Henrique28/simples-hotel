@@ -13,37 +13,15 @@
                     <form action="{{ route('tasks.store') }}" method="POST">
                         @csrf
 
-                        <div class="mb-4">
+                        <x-form-task :task="null" />
 
-                            <x-input-label for="title" :value="__('Título da Tarefa')" />
-                            <x-text-input
-                                id="title"
-                                name="title"
-                                type="text"
-                                class="mt-1 block w-full"
-                                :value="old('title')"
-                                required
-                                autofocus />
-
-                            <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                        </div>
-
-                        <div class="mb-6">
-                            <x-input-label for="description" :value="__('Descrição (Opcional)')" />
-                            <textarea
-                                id="description"
-                                name="description"
-                                rows="4"
-                                class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full">{{ old('description') }}</textarea>
-                            <x-input-error class="mt-2" :messages="$errors->get('description')" />
-                        </div>
-
-                        <div class="flex items-center justify-end">
-                            <x-primary-button class="ms-4">
+                        <div class="flex items-center justify-end mt-4">
+                            <x-primary-button>
                                 {{ __('Salvar Tarefa') }}
                             </x-primary-button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
