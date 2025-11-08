@@ -17,7 +17,7 @@
             <div class="bg-white overflow-auto shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
 
-                    <div class="mb-4 flex justify-between items-center">
+                    <div class="mb-4 flex flex-wrap justify-between items-center gap-3">
                         <a href="{{ route('tasks.create') }}"
                             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm font-semibold shadow-lg transition-all duration-200">
                             + Criar Nova Tarefa
@@ -26,7 +26,8 @@
                         @include('tasks.partials.filter')
                     </div>
 
-                    <table class="w-full divide-y divide-gray-200">
+                    <div class="overflow-x-auto">
+                        <table class="w-full divide-y divide-gray-200">
                         <thead>
                             <tr>
                                 <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Título</th>
@@ -68,6 +69,7 @@
                             @endempty
                         </tbody>
                     </table>
+                    </div>
 
                     <div class="mt-4">
                         {{ $tasks->links() }}

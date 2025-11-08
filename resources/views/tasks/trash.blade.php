@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    
+
                     <div class="mb-4">
                         <a href="{{ route('tasks.index') }}" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
                             ← Voltar para a Lista Principal
@@ -32,7 +32,6 @@
                                         {{ $task->deleted_at->format('d/m/Y H:i') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                                        {{-- Formulário de RESTAURAÇÃO --}}
                                         <form action="{{ route('tasks.restore', $task) }}" method="POST" class="inline">
                                             @csrf
                                             @method('PATCH')
@@ -43,7 +42,7 @@
                                     </td>
                                 </tr>
                             @endforeach
-                            
+
                             @empty($tasks->count())
                                 <tr>
                                     <td colspan="3" class="px-6 py-4 text-center text-gray-500">Nenhuma tarefa excluída na lixeira.</td>

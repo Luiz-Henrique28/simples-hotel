@@ -76,7 +76,17 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            
+            <x-responsive-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
+                {{ __('Minhas Tarefas') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('tasks.create')" :active="request()->routeIs('tasks.create')">
+                {{ __('Criar Nova Tarefa') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('tasks.trash')" :active="request()->routeIs('tasks.trash')">
+                {{ __('Tarefas Excluídas') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

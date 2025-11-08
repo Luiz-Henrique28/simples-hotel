@@ -1,5 +1,5 @@
-<form action="{{ route('tasks.index') }}" method="GET" id="filter-form" class="flex items-center space-x-2">
-    <label for="status-filter" class="text-sm font-medium">Filtrar por Status: </label>
+<form action="{{ route('tasks.index') }}" method="GET" id="filter-form" class="flex flex-col items-start gap-1">
+    <label for="status-filter" class="text-sm font-medium">Filtrar por Status:</label>
 
     <select name="status" id="status-filter"
         class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm text-sm"
