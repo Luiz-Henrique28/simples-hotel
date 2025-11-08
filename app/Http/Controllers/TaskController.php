@@ -80,4 +80,27 @@ class TaskController extends Controller
         
         return redirect()->route('tasks.index')->with('success', 'Tarefa excluída com sucesso!');
     }
+
+    /**
+     * Lists all deleted tasks (Soft Deletes).
+     * @return \Illuminate\View\View
+     */
+    public function trash()
+    {
+        $tasks = Task::onlyTrashed()->paginate(10);
+        
+        return view('tasks.trash', compact('tasks'));
+    }
+
+    /**
+     * Restores a logically deleted task.
+     * @param \App\Models\Task
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function restore(Task $task)
+    {
+        $task->restore(); 
+        
+        return redirect()->route('tasks.index')->with('success', 'Tarefa restaurada com sucesso!');
+    }
 }

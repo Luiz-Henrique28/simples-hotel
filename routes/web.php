@@ -12,6 +12,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('tasks/trash', [TaskController::class, 'trash'])->name('tasks.trash');
+    Route::patch('tasks/{task}/restore', [TaskController::class, 'restore'])->name('tasks.restore')->withTrashed();
+
     Route::resource('tasks', TaskController::class); 
 });
 

@@ -20,6 +20,10 @@
                     <x-nav-link :href="route('tasks.create')" :active="request()->routeIs('tasks.create')">
                         {{ __('Criar Nova Tarefa') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('tasks.trash')" :active="request()->routeIs('tasks.trash')">
+                        {{ __('Tarefas Excluídas') }}
+                    </x-nav-link>
                 </div>
             </div>
 
